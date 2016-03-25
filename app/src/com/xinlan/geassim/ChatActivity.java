@@ -1,14 +1,18 @@
 package com.xinlan.geassim;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 
+import com.netease.nimlib.sdk.msg.model.IMMessage;
 import com.xinlan.geassim.model.Friend;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ChatActivity extends IMBaseActivity {
     private Friend mFriend;
+    private List<IMMessage> mMsgList = new ArrayList<IMMessage>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

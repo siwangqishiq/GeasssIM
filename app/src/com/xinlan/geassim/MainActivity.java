@@ -4,10 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.content.SharedPreferencesCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -100,6 +102,7 @@ public class MainActivity extends IMBaseActivity implements View.OnClickListener
      */
     private void loginOut() {
         NIMClient.getService(AuthService.class).logout();
+
         SharedPreferences.Editor ed = this.getSharedPreferences(Constants.APP_NAME, Context.MODE_PRIVATE).edit();
         ed.putString(Constants.USER_NAME_KEY, "");
         ed.putString(Constants.USER_TOKEN_KEY, "");
