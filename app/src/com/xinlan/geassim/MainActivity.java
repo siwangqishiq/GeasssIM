@@ -103,6 +103,7 @@ public class MainActivity extends IMBaseActivity implements View.OnClickListener
         SharedPreferences.Editor ed = this.getSharedPreferences(Constants.APP_NAME, Context.MODE_PRIVATE).edit();
         ed.putString(Constants.USER_NAME_KEY, "");
         ed.putString(Constants.USER_TOKEN_KEY, "");
+        CoreApplication.getInstance().loginOut();
     }
 
     public void talkToFriend(Friend friend) {

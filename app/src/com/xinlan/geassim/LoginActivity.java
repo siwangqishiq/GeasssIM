@@ -31,10 +31,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         initView();
 
         StatusCode status = NIMClient.getStatus();
-//        if (!status.shouldReLogin()) {
-//            startActivity(new Intent(this, MainActivity.class));
-//            finish();
-//        }
+        if (status == StatusCode.LOGINED) {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
+
     }
 
     private void initToolBar() {
@@ -90,8 +91,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         ed.putString(Constants.USER_NAME_KEY, info.getAccount());
         ed.putString(Constants.USER_TOKEN_KEY, info.getToken());
 
+        CoreApplication.getInstance().setSelf(info.getAccount(), info.getToken());
         startActivity(new Intent(this, MainActivity.class));
         this.finish();
     }
-
 }//end class

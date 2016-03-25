@@ -19,10 +19,17 @@ import java.util.prefs.Preferences;
  * Created by panyi on 2016/3/21.
  */
 public class CoreApplication extends Application {
+    private static CoreApplication instance;
+    public static CoreApplication getInstance(){
+        return instance;
+    }
+    private MySelf mSelf;
+
     @Override
     public void onCreate() {
         super.onCreate();
         NIMClient.init(this, loginInfo(), options());
+        instance = this;
     }
 
     private SDKOptions options() {
@@ -83,9 +90,22 @@ public class CoreApplication extends Application {
 
         if (!TextUtils.isEmpty(account) && !TextUtils.isEmpty(token)) {
             //DemoCache.setAccount(account.toLowerCase());
+            mSelf = new MySelf(account,token);
             return new LoginInfo(account, token);
         } else {
             return null;
         }
+    }
+
+    public void loginOut(){
+        mSelf = null;
+    }
+
+    public MySelf getSelf(){
+        return mSelf;
+    }
+
+    public void setSelf(String account,String token){
+        mSelf = new MySelf(token,account);
     }
 }//end class
