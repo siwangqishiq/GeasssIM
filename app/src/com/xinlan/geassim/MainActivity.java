@@ -35,6 +35,8 @@ public class MainActivity extends IMBaseActivity implements View.OnClickListener
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         initView();
         NIMClient.getService(AuthServiceObserver.class).observeOnlineStatus(mOnlineObserver, true);
     }

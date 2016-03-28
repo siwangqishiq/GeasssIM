@@ -46,6 +46,24 @@ public class Friend implements Serializable {
         list.add(new Friend("conan", "柯南", URLS[6]));
         list.add(new Friend("conan", "柯南", URLS[7]));
         list.add(new Friend("conan", "柯南", URLS[8]));
+        list.add(new Friend("hanminmin", "韩敏敏", URLS[0]));
+        list.add(new Friend("luluxiu", "鲁路修", URLS[1]));
+        list.add(new Friend("conan", "柯南", URLS[2]));
+        list.add(new Friend("hanminmin", "韩敏敏", URLS[3]));
+        list.add(new Friend("luluxiu", "鲁路修", URLS[4]));
+        list.add(new Friend("conan", "柯南", URLS[5]));
+        list.add(new Friend("conan", "柯南", URLS[6]));
+        list.add(new Friend("conan", "柯南", URLS[7]));
+        list.add(new Friend("conan", "柯南", URLS[8]));
+        list.add(new Friend("hanminmin", "韩敏敏", URLS[0]));
+        list.add(new Friend("luluxiu", "鲁路修", URLS[1]));
+        list.add(new Friend("conan", "柯南", URLS[2]));
+        list.add(new Friend("hanminmin", "韩敏敏", URLS[3]));
+        list.add(new Friend("luluxiu", "鲁路修", URLS[4]));
+        list.add(new Friend("conan", "柯南", URLS[5]));
+        list.add(new Friend("conan", "柯南", URLS[6]));
+        list.add(new Friend("conan", "柯南", URLS[7]));
+        list.add(new Friend("conan", "柯南", URLS[8]));
         return list;
     }
 }//end class
